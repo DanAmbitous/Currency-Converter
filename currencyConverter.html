@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+    <script type="text/javascript" src="currencyConverter.js" defer></script>
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <div>
+        <p>From: <span id="currency-one"><label for="currencies"><select name="currencies" id="currency">
+            <option value="volvo">Dollars</option>
+            <option value="saab">Pounds</option>
+            <option value="mercedes">Euros</option>
+            <option value="audi">Rials</option>
+        </select></label></span> <button id="switch">Switch</button> To: <span id="currency-two">Pounds</span></p>
+        
+        <p id="sign-input">$</p>
+        <input id="input" placeholder="Dollars">
+        <p id="sign-output">£</p>
+        <input id="output" placeholder="Pounds">
+    </div>
+</body>
+</html>
