@@ -125,7 +125,7 @@ function rialToPound() {
         output += Number($(this).val());
     })
 
-    $("#output").val(`${(output * 0.000018).toFixed(2)}`);
+    $("#output").val(`${(output * 0.000018)}`);
 }
 
 function rialToDollar() {
@@ -135,7 +135,7 @@ function rialToDollar() {
         output += Number($(this).val());
     })
 
-    $("#output").val(`${(output * 0.000024).toFixed(2)}`);
+    $("#output").val(`${(output * 0.000024)}`);
 }
 
 function rialToEuro() {
@@ -145,7 +145,7 @@ function rialToEuro() {
         output += Number($(this).val());
     })
 
-    $("#output").val(`${(output * 0.000019).toFixed(2)}`);
+    $("#output").val(`${(output * 0.000019)}`);
 }
 
 function rialToRial() {
@@ -155,7 +155,7 @@ function rialToRial() {
         output += Number($(this).val());
     })
 
-    $("#output").val(`${(output * 1).toFixed(2)}`);
+    $("#output").val(`${(output * 1)}`);
 }
 
 $(document).ready(function() {
@@ -275,6 +275,34 @@ $(document).ready(function() {
             $("#input").keyup(function() {
                 euroToRial();
             })
+        } else if (currency == "﷼" && currencyOutput == "£") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                rialToPound();
+            })
+        } else if (currency == "﷼" && currencyOutput == "$") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                rialToDollar();
+            }) 
+        } else if (currency == "﷼" && currencyOutput == "€") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                rialToEuro();
+            }) 
+        } else if (currency == "﷼" && currencyOutput == "﷼") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                rialToRial();
+            }) 
         } else {
             alert("This function doesn't exist");
         }
@@ -370,6 +398,34 @@ $(document).ready(function() {
             $("#input").keyup(function() {
                 euroToRial();
             })
+        } else if (currency == "﷼" && currencyOutput == "£") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                rialToPound();
+            })
+        } else if (currency == "﷼" && currencyOutput == "$") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                rialToDollar();
+            }) 
+        } else if (currency == "﷼" && currencyOutput == "€") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                rialToEuro();
+            }) 
+        } else if (currency == "﷼" && currencyOutput == "﷼") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                rialToRial();
+            }) 
         } else {
             alert("This function doesn't exist");
         }
