@@ -10,13 +10,17 @@
 <body>
     <h1>Currency Converter</h1>
     <div>
-        <p>From: <span id="currency-one"><label for="currencies"><select name="currencies" id="currency">
-            <option value="volvo">Dollars</option>
-            <option value="saab">Pounds</option>
-            <option value="mercedes">Euros</option>
-            <option value="audi">Rials</option>
-        </select></label></span> <button id="switch">Switch</button> To: <span id="currency-two">Pounds</span></p>
-        
+        <p>From: <span id="currency-one"><label for="currencies"><select name="currencies" id="currency-input">
+            <option value="$">Dollars</option>
+            <option value="£">Pounds</option>
+            <option value="€">Euros</option>
+            <option value="﷼">Rials</option>
+        </select></label></span> <button id="switch">Switch</button> To: <span id="currency-two"><select name="currencies" id="currency-output">
+            <option value="£">Pounds</option>
+            <option value="$">Dollars</option>
+            <option value="€">Euros</option>
+            <option value="﷼">Rials</option>
+        </select></span></p>
         <p id="sign-input">$</p>
         <input id="input" placeholder="Dollars">
         <p id="sign-output">£</p>
