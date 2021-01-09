@@ -45,7 +45,37 @@ function poundToDollar() {
         output += Number($(this).val());
     })
 
-    $("#output").val(`${(output * 1.34).toFixed(2)}`);
+    $("#output").val(`${(output * 1.36).toFixed(2)}`);
+}
+
+function poundToPound() {
+    let output = 0;
+
+    $("#input").each(function() {
+        output += Number($(this).val());
+    })
+
+    $("#output").val(`${(output * 1).toFixed(2)}`);
+}
+
+function poundToEuro() {
+    let output = 0;
+
+    $("#input").each(function() {
+        output += Number($(this).val());
+    })
+
+    $("#output").val(`${(output * 1.11).toFixed(2)}`);
+}
+
+function poundToRial() {
+    let output = 0;
+
+    $("#input").each(function() {
+        output += Number($(this).val());
+    })
+
+    $("#output").val(`${(output * 57128.06).toFixed(2)}`);
 }
 
 function euroToPound() {
@@ -56,6 +86,76 @@ function euroToPound() {
     })
 
     $("#output").val(`${(output * 0.90).toFixed(2)}`);
+}
+
+function euroToDollar() {
+    let output = 0;
+
+    $("#input").each(function() {
+        output += Number($(this).val());
+    })
+
+    $("#output").val(`${(output * 0.82).toFixed(2)}`);
+}
+
+function euroToEuro() {
+    let output = 0;
+
+    $("#input").each(function() {
+        output += Number($(this).val());
+    })
+
+    $("#output").val(`${(output * 1).toFixed(2)}`);
+}
+
+function euroToRial() {
+    let output = 0;
+
+    $("#input").each(function() {
+        output += Number($(this).val());
+    })
+
+    $("#output").val(`${(output * 51473.32).toFixed(2)}`);
+}
+
+function rialToPound() {
+    let output = 0;
+
+    $("#input").each(function() {
+        output += Number($(this).val());
+    })
+
+    $("#output").val(`${(output * 0.000018).toFixed(2)}`);
+}
+
+function rialToDollar() {
+    let output = 0;
+
+    $("#input").each(function() {
+        output += Number($(this).val());
+    })
+
+    $("#output").val(`${(output * 0.000024).toFixed(2)}`);
+}
+
+function rialToEuro() {
+    let output = 0;
+
+    $("#input").each(function() {
+        output += Number($(this).val());
+    })
+
+    $("#output").val(`${(output * 0.000019).toFixed(2)}`);
+}
+
+function rialToRial() {
+    let output = 0;
+
+    $("#input").each(function() {
+        output += Number($(this).val());
+    })
+
+    $("#output").val(`${(output * 1).toFixed(2)}`);
 }
 
 $(document).ready(function() {
@@ -87,79 +187,197 @@ $(document).ready(function() {
 
     $("#currency-input").click(function() {
         let currency = $(this).val();
-        let currencyOut = $("#currency-output").val();
+        let currencyOutput = $("#currency-output").val();
 
         $("#sign-input").html(currency);
 
-        if (currency == "$" && currencyOut == "$") {
-            $("#input").val('');
-            $("#output").val('');
-
-            $("#input").keyup(function() {
-                dollarToDollar();
-            })
-        } else if (currency == "$" && currencyOut == "£") {
+        if (currency == "$" && currencyOutput == "£") {
             $("#input").val('');
             $("#output").val('');
 
             $("#input").keyup(function() {
                 dollarToPound();
             })
-        } else if (currency == "€") {
+        } else if (currency == "$" && currencyOutput == "$") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                dollarToDollar();
+            })
+        } else if (currency == "$" && currencyOutput == "€") {
             $("#input").val('');
             $("#output").val('');
 
             $("#input").keyup(function() {
                 dollarToEuro();
             })
-        } else {
+        } else if (currency == "$" && currencyOutput == "﷼") {
             $("#input").val('');
             $("#output").val('');
 
             $("#input").keyup(function() {
                 dollarToRial();
-            }) 
+            })
+        } else if (currency == "£" && currencyOutput == "£") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                poundToPound();
+            })
+        } else if (currency == "£" && currencyOutput == "$") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                poundToDollar();
+            })
+        } else if (currency == "£" && currencyOutput == "€") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                poundToEuro();
+            })
+        } else if (currency == "£" && currencyOutput == "﷼") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                poundToRial();
+            })
+        } else if (currency == "€" && currencyOutput == "£") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                euroToPound();
+            })
+        } else if (currency == "€" && currencyOutput == "$") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                euroToDollar();
+            })
+        } else if (currency == "€" && currencyOutput == "€") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                euroToEuro();
+            })
+        } else if (currency == "€" && currencyOutput == "﷼") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                euroToRial();
+            })
+        } else {
+            alert("This function doesn't exist");
         }
     });
 
     $("#currency-output").click(function() {
-        let currency = $(this).val();
+        let currency = $("#currency-input").val();
+        let currencyOutput = $(this).val();
 
-        $("#sign-output").html(currency);
+        $("#sign-input").html(currency);
 
-        if (currency == "$") {
-            $("#input").val('');
-            $("#output").val('');
-
-            $("#input").keyup(function() {
-                dollarToDollar();
-            })
-        } else if (currency == "£") {
+        if (currency == "$" && currencyOutput == "£") {
             $("#input").val('');
             $("#output").val('');
 
             $("#input").keyup(function() {
                 dollarToPound();
             })
-        } else if (currency == "€") {
+        } else if (currency == "$" && currencyOutput == "$") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                dollarToDollar();
+            })
+        } else if (currency == "$" && currencyOutput == "€") {
             $("#input").val('');
             $("#output").val('');
 
             $("#input").keyup(function() {
                 dollarToEuro();
             })
-        } else {
+        } else if (currency == "$" && currencyOutput == "﷼") {
             $("#input").val('');
             $("#output").val('');
 
             $("#input").keyup(function() {
                 dollarToRial();
-            }) 
+            })
+        }else if (currency == "£" && currencyOutput == "£") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                poundToPound();
+            })
+        } else if (currency == "£" && currencyOutput == "$") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                poundToDollar();
+            })
+        } else if (currency == "£" && currencyOutput == "€") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                poundToEuro();
+            })
+        } else if (currency == "£" && currencyOutput == "﷼") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                poundToRial();
+            })
+        } else if (currency == "€" && currencyOutput == "£") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                euroToPound();
+            })
+        } else if (currency == "€" && currencyOutput == "$") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                euroToDollar();
+            })
+        } else if (currency == "€" && currencyOutput == "€") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                euroToEuro();
+            })
+        } else if (currency == "€" && currencyOutput == "﷼") {
+            $("#input").val('');
+            $("#output").val('');
+
+            $("#input").keyup(function() {
+                euroToRial();
+            })
+        } else {
+            alert("This function doesn't exist");
         }
     });
-
+    
     $("#currency-input").click(function() {
         let currency = $(this).val();
+
         $("#sign-input").html(currency);
 
         if (currency == "$") {
